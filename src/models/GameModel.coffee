@@ -19,6 +19,9 @@ class window.GameModel extends Backbone.Model
       else if @getTrueScore() < that.get('playerHand').getTrueScore()
         alert 'You win!!!'
         that.trigger 'gameEnded'
+      else if @getTrueScore() == that.get('playerHand').getTrueScore()
+        alert 'its a PUSH'
+        that.trigger 'gameEnded'
 
     return
 
