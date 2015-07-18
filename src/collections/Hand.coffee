@@ -12,15 +12,12 @@ class window.Hand extends Backbone.Collection
       @last()
 
   stand: ->
-    console.log
-    console.log @last()
 
   play: ->
     if @isDealer
       @first().flip()
       
       while @getTrueScore() < 17
-        console.log(@getTrueScore())
         @hit()
 
       @trigger 'cardServed', @

@@ -16,6 +16,11 @@ class window.AppView extends Backbone.View
         console.log 'BlackJack !!!!!!! :D'
         @model.trigger 'gameEnded', @
 
+    @model.on('newGame', =>
+      console.log('ended')
+      @render()
+    )
+
   render: ->
     @$el.children().detach()
     @$el.html @template()
